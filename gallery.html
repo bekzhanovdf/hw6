@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Галерея изображений</h2>
+    <div class="gallery">
+        <div class="gallery__img"><img src="fb_image.png" alt="Изображение 1" onclick="showImage(this)"></div>
+        <div class="gallery__img"><img src="maxresdefault.jpg" alt="Изображение 2" onclick="showImage(this)"></div>
+        <div class="gallery__img"><img src="Counter-Strike_Box_1.jpg" alt="Изображение 3" onclick="showImage(this)"></div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="hideImage()">
+        <img id="largeImage" src="" alt="Увеличенное изображение">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

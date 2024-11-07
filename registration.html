@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Регистрация</h2>
+    <form id="registrationForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name">
+        <small class="error" id="nameError">Поле "Имя" не может быть пустым</small>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <small class="error" id="emailError">Введите корректный email</small>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password">
+        <small class="error" id="passwordError">Пароль должен содержать минимум 8 символов</small>
+
+        <button type="button" onclick="validateForm()">Отправить</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

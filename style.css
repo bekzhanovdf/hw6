@@ -1,0 +1,159 @@
+/* Основной стиль страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #D8B4E2, #96E6F3);
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #333;
+    margin: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект стеклянной панели для форм */
+form, .gallery {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery__img {
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery__img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.gallery__img:hover img {
+    transform: scale(1.2);
+}
+
+/* Модальное окно для увеличенного изображения */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Плавное появление и скрытие lightbox */
+#lightbox.show {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Стили для кнопок */
+button {
+    background-color: #5B8DEE;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4A73D4;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Эффект анимации для заголовков */
+h2 {
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для миниатюр при загрузке */
+.gallery__img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.gallery__img:nth-child(1) { animation-delay: 0.1s; }
+.gallery__img:nth-child(2) { animation-delay: 0.2s; }
+.gallery__img:nth-child(3) { animation-delay: 0.3s; }
+.gallery__img:nth-child(4) { animation-delay: 0.4s; }
+.gallery__img:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
